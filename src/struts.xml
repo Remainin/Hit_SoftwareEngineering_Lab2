@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+ 	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+	<action name="home" class="com.zms.HomeAction">
+		<result>/home.jsp</result>
+	</action>
+	<action name="showall" method= "show" class="com.zms.showallAction">
+		<result>/allbook.jsp</result>
+	</action>
+	<action name="search" method="ss" class="com.zms.searchAction">
+		<result name="Original">/search.jsp</result>
+		<result>/FindTheBook.jsp</result>
+		<result name="add">/addask.jsp</result>
+		<result name="no">/no.jsp</result>
+	</action>
+	<action name="show" method="showa" class="com.zms.showAction">
+		<result>/showone.jsp</result>
+		<result name="no">/no.jsp</result>
+	</action>
+	<action name="delete" method="de" class="com.zms.deleteAction">
+		<result>/delete.jsp</result>
+		<result name="no">/no.jsp</result>
+	</action>
+	<action name="update" method="showjsp" class="com.zms.updateAction">
+		<result>update.jsp</result>
+		<result name="no">/no.jsp</result>
+	</action>
+	<action name="add" method="addask" class="com.zms.addAction">
+		<result>/addbook.jsp</result>
+	</action>
+	<action name="addbook" method="addbook" class="com.zms.addAction">
+		<result name="ISBN_error">/ISBN.jsp</result>
+		<result name="needAuthor">/addauthor.jsp</result>
+		<result name="not_enough">/not_enough.jsp</result>
+		<result>/addbookSuccess.jsp</result>
+		<result name="no">/no.jsp</result>
+	</action>
+	<action name="addauthor" method="addauthor" class="com.zms.addAction">
+		<result>/addauthorSuccess.jsp</result>
+		<result name="not_enoug">/not_enoug.jsp</result>
+		<result name="authorID_error">/authorID_error.jsp</result>
+		<result name="no">/no.jsp</result>
+	</action>
+	<action name="addauthorask" method="addauthorask" class="com.zms.addAction">
+		<result>/addauthor.jsp</result>
+	</action>
+	<action name="upbook" method="upbook" class="com.zms.updateAction">
+		<result>/upbookSuccess.jsp</result>
+		<result name="not_enough">/up_not_enough.jsp</result>
+		<result name="needAuthor">/up_upauthor.jsp</result>
+		<result name="no">/no.jsp</result>
+	</action>
+	<action name="upauthor" method="upauthor" class="com.zms.updateAction">
+		<result>/upauthorSuccess.jsp</result>
+		<result name="not_enoug">/up_reup.jsp</result>
+		<result name="authorID_error">/up_reupauthor.jsp</result>
+		<result name="no">/no.jsp</result>
+	</action>
+	<action name="upauthorask" method="upauthorask" class="com.zms.updateAction">
+		<result>/up_upauthor.jsp</result>
+	</action>
+	
+	</package>
+
+</struts>
+
